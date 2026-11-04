@@ -1,0 +1,1337 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050914">
+<meta name="description" content="نجمة فطامي — هدية خاصة بين النجوم">
+<title>نجمة فطامي ✨</title>
+
+<style>
+:root {
+  --bg: #050914;
+  --navy: #0b1630;
+  --gold: #e8c78c;
+  --gold-light: #fff0c7;
+  --white: #f6f2ed;
+  --muted: #a9b5c9;
+  --line: rgba(232,199,140,.25);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Tahoma, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+#sky {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  touch-action: pan-y;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 50% 35%,
+      transparent 5%,
+      rgba(2,5,15,.35) 70%,
+      rgba(2,5,15,.75) 100%);
+}
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 22px 85px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-size: 12px;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: clamp(44px, 9vw, 90px);
+  font-weight: 400;
+  margin: 0;
+  color: var(--gold-light);
+  text-shadow: 0 0 45px rgba(232,199,140,.25);
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 2.2;
+  max-width: 520px;
+  margin: 24px auto;
+}
+
+.gold-star {
+  font-size: 64px;
+  color: var(--gold-light);
+  cursor: pointer;
+  display: inline-block;
+  margin: 24px 0;
+  animation: glow 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 18px #e8c78c);
+}
+
+@keyframes glow {
+  0%,100% { opacity: .75; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.13); }
+}
+
+.btn {
+  border: 1px solid var(--gold);
+  background: rgba(232,199,140,.09);
+  color: var(--gold-light);
+  padding: 15px 29px;
+  border-radius: 40px;
+  transition: .3s;
+  margin: 8px;
+}
+
+.btn:hover {
+  background: rgba(232,199,140,.22);
+  transform: translateY(-2px);
+}
+
+.btn:active { transform: scale(.97); }
+
+.section {
+  padding: 95px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass {
+  width: min(100%, 700px);
+  padding: clamp(28px, 6vw, 60px);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: rgba(6,13,29,.78);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 25px 90px rgba(0,0,0,.3);
+  text-align: center;
+}
+
+.section-title {
+  color: var(--gold);
+  font-size: 27px;
+  font-weight: 400;
+  margin: 0 0 30px;
+}
+
+.message {
+  font-size: 18px;
+  line-height: 2.7;
+  color: #f0edf0;
+}
+
+.small {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.divider {
+  height: 1px;
+  width: 80px;
+  background: var(--gold);
+  margin: 35px auto;
+  opacity: .5;
+}
+
+.star-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 30px 0;
+  text-align: right;
+}
+
+.info-cell {
+  background: rgba(255,255,255,.035);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.info-label {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.info-value {
+  color: var(--gold-light);
+  font-size: 14px;
+}
+
+.certificate {
+  width: min(100%, 750px);
+  padding: 12px;
+  background: linear-gradient(135deg,
+    #a9834c, #f6e3b1, #9a743c);
+  border-radius: 8px;
+  color: #20202b;
+  box-shadow: 0 25px 80px rgba(0,0,0,.45);
+}
+
+.certificate-inner {
+  background: #f7f1e5;
+  padding: clamp(25px, 6vw, 65px);
+  border: 2px solid #b89b67;
+  text-align: center;
+  min-height: 450px;
+}
+
+.cert-icon {
+  color: #b28a4c;
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.cert-overline {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #7e6746;
+}
+
+.cert-title {
+  font-size: clamp(28px, 6vw, 46px);
+  color: #8a6738;
+  font-weight: 400;
+  margin: 24px 0;
+}
+
+.cert-name {
+  font-size: clamp(34px, 8vw, 60px);
+  color: #182b47;
+  margin: 22px 0;
+}
+
+.cert-text {
+  line-height: 2.3;
+  font-size: 15px;
+  color: #55515a;
+}
+
+.cert-rule {
+  width: 100px;
+  height: 1px;
+  background: #b89b67;
+  margin: 30px auto;
+}
+
+.final {
+  min-height: 75svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 25px;
+  text-align: center;
+}
+
+.final p {
+  line-height: 2.6;
+  font-size: 19px;
+  max-width: 500px;
+}
+
+.sender-wrap {
+  margin-top: 60px;
+  min-height: 125px;
+}
+
+.sender {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 1.8s ease, transform 1.8s ease;
+  color: var(--gold-light);
+  font-size: 48px;
+  font-weight: 400;
+  text-shadow: 0 0 25px rgba(232,199,140,.5);
+}
+
+.sender.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sender-label {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+
+footer {
+  text-align: center;
+  color: #78859b;
+  font-size: 11px;
+  padding: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(2,5,14,.88);
+  z-index: 20;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.open { display: flex; }
+
+.modal-content {
+  width: min(100%, 480px);
+  padding: 45px 25px;
+  text-align: center;
+  border: 1px solid var(--gold);
+  border-radius: 22px;
+  background: #091327;
+  box-shadow: 0 0 90px rgba(232,199,140,.12);
+}
+
+.modal-content h2 {
+  color: var(--gold-light);
+  font-weight: 400;
+  font-size: 32px;
+}
+
+.modal-content p {
+  line-height: 2.6;
+  font-size: 17px;
+}
+
+.close {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 27px;
+  position: absolute;
+  top: 20px;
+  left: 22px;
+}
+
+.modal-content { position: relative; }
+
+#skyControls {
+  position: fixed;
+  bottom: 20px;
+  left: 15px;
+  z-index: 5;
+  display: flex;
+  gap: 8px;
+}
+
+.sky-control {
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 25px;
+  color: #e5e9f1;
+  background: rgba(6,13,29,.7);
+  padding: 10px 13px;
+  font-size: 12px;
+  backdrop-filter: blur(10px);
+}
+
+@media(max-width: 480px) {
+  .message { font-size: 16px; }
+  .star-info { grid-template-columns: 1fr; }
+  .glass { padding: 30px 23px; }
+  .section { padding: 65px 16px; }
+  .certificate-inner { min-height: 0; }
+  #skyControls { bottom: 12px; left: 10px; }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+@media print {
+  @page { size: A4 portrait; margin: 12mm; }
+
+  body { background: white; }
+  #sky, .overlay, .hero, .section:not(.cert-section),
+  .final, footer, #skyControls, .print-hide {
+    display: none !important;
+  }
+  .cert-section {
+    display: block;
+    padding: 0;
+    min-height: 0;
+  }
+  .certificate {
+    width: 100%;
+    box-shadow: none;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .certificate-inner { min-height: 240mm; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="sky" aria-label="خريطة سما تفاعلية"></canvas>
+<div class="overlay"></div>
+
+<div id="skyControls" class="print-hide">
+  <button class="sky-control" id="toggleLines"
+    aria-pressed="true">الأبراج ✓</button>
+  <button class="sky-control" id="toggleNames"
+    aria-pressed="true">الأسماء ✓</button>
+</div>
+
+<main>
+
+<section class="hero">
+  <div class="eyebrow">A STAR JUST FOR YOU</div>
+
+  <h1>نجمة فطامي</h1>
+
+  <div class="gold-star"
+       role="button"
+       tabindex="0"
+       aria-label="افتحي نجمة فطامي"
+       id="heroStar">✦</div>
+
+  <p class="subtitle">
+    بين هالنجوم كلها،
+    في نجمة وحدة اخترتها عشان تحمل اسمج.
+    <br>
+    مب لأنها ألمع نجمة في السما...
+    <br>
+    لأنها صارت مميزة يوم ارتبطت باسمج.
+  </p>
+
+  <button class="btn" id="discoverBtn">
+    اكتشفي نجمتج ✨
+  </button>
+
+  <p class="small">
+    تقدرين تلمسين النجوم في السما وتتعرفين عليها
+  </p>
+</section>
+
+<section class="section" id="starSection">
+  <div class="glass">
+    <div class="eyebrow">YOUR SPECIAL STAR</div>
+
+    <h2 class="section-title">فطامي ✦</h2>
+
+    <p class="message">
+      اخترت لج نجمة بين هالسما الواسعة،
+      وخليت اسمج مرتبط فيها.
+      <br><br>
+      يمكن هالهدية بسيطة،
+      بس وراها أمنية كبيرة...
+      <br><br>
+      إن ربي يحفظج،
+      ويطمن قلبج،
+      ويبعد عنج كل خوف،
+      وتعدّي هالأيام على خير.
+    </p>
+
+    <div class="divider"></div>
+
+    <div class="star-info">
+      <div class="info-cell">
+        <span class="info-label">اسم النجمة الرمزي</span>
+        <span class="info-value">نجمة فطامي</span>
+      </div>
+      <div class="info-cell">
+        <span class="info-label">النوع</span>
+        <span class="info-value">إهداء فلكي رمزي</span>
+      </div>
+      <div class="info-cell">
+        <span class="info-label">النجمة المرجعية الحقيقية</span>
+        <span class="info-value">Vega — النسر الواقع</span>
+      </div>
+      <div class="info-cell">
+        <span class="info-label">الكوكبة</span>
+        <span class="info-value">Lyra — القيثارة</span>
+      </div>
+      <div class="info-cell">
+        <span class="info-label">المطلع المستقيم RA</span>
+        <span class="info-value">18h 36m 56.3s</span>
+      </div>
+      <div class="info-cell">
+        <span class="info-label">الميل السماوي Dec</span>
+        <span class="info-value">+38° 47′ 01″</span>
+      </div>
+    </div>
+
+    <p class="small">
+      النجمة المرجعية هي Vega الحقيقية.
+      أما اسم «نجمة فطامي» فهو تسمية شخصية
+      رمزية، وليس اسماً فلكياً رسمياً.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="glass">
+    <div class="eyebrow">BEFORE YOUR SPECIAL DAY</div>
+
+    <h2 class="section-title">إذا خفتي... اقري هالكلام 🤍</h2>
+
+    <p class="message">
+      يا فطامي...
+      <br><br>
+      أدري إن العملية مخوفتنج،
+      وأدري إن التفكير فيها مب سهل.
+      <br><br>
+      بس أباج تعرفين إن في حد
+      يدعي لج من قلبه،
+      ويتمنى يشوفج مرتاحة ومستانسة.
+      <br><br>
+      خذي الأمور شوي شوي،
+      واسألي دكتورج عن كل شي يقلقج،
+      ولا تشيلين الخوف بروحج.
+      <br><br>
+      وإن شاء الله يوم تخلص العملية
+      وتردّين بالسلامة،
+      تكون هالأيام مجرد ذكرى،
+      وترجع ضحكتج الحلوة.
+      <br><br>
+      الله يحفظج يا فطامي.
+    </p>
+
+    <div class="divider"></div>
+
+    <p class="small">
+      كل نجمة في هالسما تذكير بأمنية حلوة لج.
+    </p>
+  </div>
+</section>
+
+<section class="section cert-section" id="certificateSection">
+  <div style="width:min(100%,750px)">
+    <div class="certificate" id="certificate">
+      <div class="certificate-inner">
+        <div class="cert-icon">✦</div>
+
+        <div class="cert-overline">
+          A STAR DEDICATION
+        </div>
+
+        <h2 class="cert-title">شهادة إهداء نجمة</h2>
+
+        <p class="cert-text">
+          تُقدَّم هذه الشهادة الرمزية بكل محبة
+          إلى صاحبة الاسم الجميل
+        </p>
+
+        <div class="cert-name">فطامي</div>
+
+        <p class="cert-text">
+          إهداء نجمة رمزية تحمل اسم
+          <strong>«نجمة فطامي»</strong>
+          <br>
+          مستوحاة من النجمة الحقيقية
+          Vega في كوكبة القيثارة.
+        </p>
+
+        <div class="cert-rule"></div>
+
+        <p class="cert-text">
+          لأن بعض الأشخاص يشبهون النجوم...
+          <br>
+          حضورهم لحاله يخلّي الدنيا أجمل.
+        </p>
+
+        <div class="cert-rule"></div>
+
+        <p class="cert-text">
+          مع أمنية صادقة بالسلامة والطمأنينة،
+          <br>
+          وبأيام كلها فرح وراحة.
+        </p>
+
+        <p style="margin-top:40px;color:#8a6738">
+          ✦ &nbsp; ✧ &nbsp; ✦
+        </p>
+
+        <p style="font-size:10px;color:#8b8175">
+          PERSONAL SYMBOLIC DEDICATION
+          <br>
+          NOT AN OFFICIAL ASTRONOMICAL REGISTRATION
+        </p>
+      </div>
+    </div>
+
+    <div class="print-hide"
+         style="text-align:center;margin-top:25px">
+      <button class="btn" onclick="window.print()">
+        حفظ الشهادة PDF
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="finalSection">
+  <div class="eyebrow">ONE LAST THING</div>
+
+  <h2 class="section-title">وقبل لا تسكرين الهدية...</h2>
+
+  <p>
+    لو أقدر أهديج راحة بال،
+    جان خليتها أكبر من السما.
+    <br><br>
+    ولو أقدر أشيل عنج الخوف،
+    جان ما خليت منه شي.
+    <br><br>
+    بس اللي أقدر عليه...
+    إني أدعي لج من خاطري،
+    وأتمنى لج كل خير.
+  </p>
+
+  <div class="divider"></div>
+
+  <p style="color:var(--gold-light)">
+    ربي يحفظج ويردّج بالسلامة
+    يا أجمل فطامي 🤍
+  </p>
+
+  <div class="sender-wrap" id="senderReveal">
+    <div class="sender-label">
+      هالهدية من شخص يتمنى لج الخير دايماً
+    </div>
+    <div class="sender" id="senderName">سيف</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  نجمة فطامي ✦ هدية رمزية خاصة
+</footer>
+
+<div class="modal" id="starModal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modalTitle">
+  <div class="modal-content">
+    <button class="close" id="closeModal"
+            aria-label="إغلاق">×</button>
+
+    <div class="gold-star"
+         style="cursor:default;font-size:55px">✦</div>
+
+    <h2 id="modalTitle">نجمة فطامي</h2>
+
+    <p>
+      هالنجمة اخترتها لج،
+      عشان كل ما شفتيها تتذكرين
+      إن في حد يدعي لج بالسلامة.
+      <br><br>
+      الله يطمن قلبج يا فطامي 🤍
+    </p>
+
+    <button class="btn" id="certificateBtn">
+      شوفي شهادتج ✨
+    </button>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+/*
+  FATAMI STAR
+  Standalone interactive celestial dedication.
+
+  The named stars below use approximate J2000
+  equatorial coordinates (RA/Dec).
+
+  This is an artistic celestial projection.
+  It is not a live planetarium, telescope
+  pointing system, or official star registry.
+
+  Vega is the real reference star.
+  "Fatami Star" is a symbolic dedication.
+*/
+
+const canvas = document.getElementById("sky");
+const ctx = canvas.getContext("2d");
+
+let width = 0;
+let height = 0;
+let dpr = 1;
+
+let backgroundStars = [];
+let shootingStars = [];
+
+let showLines = true;
+let showNames = true;
+
+let pointerX = 0;
+let pointerY = 0;
+
+let lastTime = 0;
+let animationTime = 0;
+
+const reducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+/*
+  Approximate J2000 coordinates:
+  RA expressed in decimal hours.
+  Dec expressed in decimal degrees.
+*/
+
+const stars = [
+  {id:"vega",name:"Vega",ar:"النسر الواقع",ra:18.6156,dec:38.7837,mag:0.03},
+  {id:"deneb",name:"Deneb",ar:"ذنب الدجاجة",ra:20.6905,dec:45.2803,mag:1.25},
+  {id:"altair",name:"Altair",ar:"النسر الطائر",ra:19.8464,dec:8.8683,mag:0.77},
+
+  {id:"betelgeuse",name:"Betelgeuse",ar:"منكب الجوزاء",ra:5.9195,dec:7.4071,mag:0.5},
+  {id:"rigel",name:"Rigel",ar:"رجل الجبار",ra:5.2423,dec:-8.2016,mag:0.13},
+  {id:"bellatrix",name:"Bellatrix",ar:"الناجذ",ra:5.4189,dec:6.3497,mag:1.64},
+  {id:"saiph",name:"Saiph",ar:"سيف الجبار",ra:5.7959,dec:-9.6696,mag:2.06},
+  {id:"alnitak",name:"Alnitak",ar:"النطاق",ra:5.6793,dec:-1.9426,mag:1.74},
+  {id:"alnilam",name:"Alnilam",ar:"النظام",ra:5.6036,dec:-1.2019,mag:1.69},
+  {id:"mintaka",name:"Mintaka",ar:"المنطقة",ra:5.5334,dec:-0.2991,mag:2.23},
+
+  {id:"dubhe",name:"Dubhe",ar:"الدبة",ra:11.0621,dec:61.7508,mag:1.79},
+  {id:"merak",name:"Merak",ar:"المراق",ra:11.0307,dec:56.3824,mag:2.37},
+  {id:"phecda",name:"Phecda",ar:"الفخذة",ra:11.8972,dec:53.6948,mag:2.44},
+  {id:"megrez",name:"Megrez",ar:"المغرز",ra:12.2571,dec:57.0326,mag:3.31},
+  {id:"alioth",name:"Alioth",ar:"الجون",ra:12.9005,dec:55.9598,mag:1.77},
+  {id:"mizar",name:"Mizar",ar:"العناق",ra:13.3987,dec:54.9254,mag:2.23},
+  {id:"alkaid",name:"Alkaid",ar:"القائد",ra:13.7923,dec:49.3133,mag:1.86},
+
+  {id:"schedar",name:"Schedar",ar:"صدر ذات الكرسي",ra:0.6751,dec:56.5373,mag:2.24},
+  {id:"caph",name:"Caph",ar:"الكف",ra:0.1529,dec:59.1498,mag:2.28},
+  {id:"gammaCas",name:"Gamma Cassiopeiae",ar:"جاما ذات الكرسي",ra:0.9451,dec:60.7167,mag:2.47},
+  {id:"ruchbah",name:"Ruchbah",ar:"الركبة",ra:1.4303,dec:60.2353,mag:2.68},
+  {id:"segin",name:"Segin",ar:"سيغين",ra:1.9066,dec:63.6701,mag:3.35},
+
+  {id:"sheliak",name:"Sheliak",ar:"الشلياق",ra:18.8347,dec:33.3627,mag:3.45},
+  {id:"sulafat",name:"Sulafat",ar:"السلاحف",ra:18.9824,dec:32.6896,mag:3.24},
+  {id:"deltaLyr",name:"Delta Lyrae",ar:"دلتا القيثارة",ra:18.9084,dec:36.8986,mag:4.3},
+  {id:"zetaLyr",name:"Zeta Lyrae",ar:"زيتا القيثارة",ra:18.7462,dec:37.6051,mag:4.3},
+
+  {id:"sirius",name:"Sirius",ar:"الشعرى اليمانية",ra:6.7525,dec:-16.7161,mag:-1.46},
+  {id:"arcturus",name:"Arcturus",ar:"السماك الرامح",ra:14.2610,dec:19.1825,mag:-0.05},
+  {id:"spica",name:"Spica",ar:"السماك الأعزل",ra:13.4199,dec:-11.1613,mag:0.98},
+  {id:"regulus",name:"Regulus",ar:"قلب الأسد",ra:10.1395,dec:11.9672,mag:1.35},
+  {id:"antares",name:"Antares",ar:"قلب العقرب",ra:16.4901,dec:-26.4319,mag:1.06},
+  {id:"polaris",name:"Polaris",ar:"النجم القطبي",ra:2.5303,dec:89.2641,mag:1.98},
+  {id:"aldebaran",name:"Aldebaran",ar:"الدبران",ra:4.5987,dec:16.5093,mag:0.85},
+  {id:"capella",name:"Capella",ar:"العيوق",ra:5.2782,dec:45.9980,mag:0.08}
+];
+
+const constellations = [
+  {
+    name:"الجبار",
+    edges:[
+      ["betelgeuse","bellatrix"],
+      ["betelgeuse","alnitak"],
+      ["bellatrix","mintaka"],
+      ["alnitak","alnilam"],
+      ["alnilam","mintaka"],
+      ["alnitak","saiph"],
+      ["mintaka","rigel"],
+      ["saiph","rigel"]
+    ]
+  },
+  {
+    name:"الدب الأكبر",
+    edges:[
+      ["dubhe","merak"],
+      ["merak","phecda"],
+      ["phecda","megrez"],
+      ["megrez","dubhe"],
+      ["megrez","alioth"],
+      ["alioth","mizar"],
+      ["mizar","alkaid"]
+    ]
+  },
+  {
+    name:"ذات الكرسي",
+    edges:[
+      ["caph","schedar"],
+      ["schedar","gammaCas"],
+      ["gammaCas","ruchbah"],
+      ["ruchbah","segin"]
+    ]
+  },
+  {
+    name:"القيثارة",
+    edges:[
+      ["vega","zetaLyr"],
+      ["vega","deltaLyr"],
+      ["zetaLyr","sheliak"],
+      ["deltaLyr","sulafat"],
+      ["sheliak","sulafat"]
+    ]
+  },
+  {
+    name:"مثلث الصيف",
+    edges:[
+      ["vega","deneb"],
+      ["deneb","altair"],
+      ["altair","vega"]
+    ]
+  }
+];
+
+const starMap = new Map(stars.map(s => [s.id,s]));
+
+/*
+  Artistic equirectangular sky atlas.
+  The complete 360-degree RA span is mapped
+  horizontally, and Dec -90 to +90 vertically.
+
+  Dragging shifts the celestial map.
+  This is not a local horizon projection.
+*/
+
+let viewRA = 18.6;
+let viewDec = 35;
+let zoom = 1;
+
+function wrapRA(hours) {
+  return ((hours % 24) + 24) % 24;
+}
+
+function shortestRA(a,b) {
+  let diff = a-b;
+  while(diff > 12) diff -= 24;
+  while(diff < -12) diff += 24;
+  return diff;
+}
+
+function project(star) {
+  const dx = shortestRA(star.ra,viewRA);
+  const dy = star.dec-viewDec;
+
+  const scaleX = width / 12 * zoom;
+  const scaleY = height / 110 * zoom;
+
+  return {
+    x: width/2 - dx*scaleX,
+    y: height/2 - dy*scaleY
+  };
+}
+
+function seededRandom(seed) {
+  let x = seed >>> 0;
+  return function() {
+    x = (1664525*x + 1013904223) >>> 0;
+    return x/4294967296;
+  };
+}
+
+function createBackgroundStars() {
+  const random = seededRandom(20261104);
+  backgroundStars = [];
+
+  const count = Math.min(
+    1500,
+    Math.max(550,Math.floor(width*height/650))
+  );
+
+  for(let i=0;i<count;i++) {
+    backgroundStars.push({
+      x:random()*width,
+      y:random()*height,
+      r:.25+random()*1.15,
+      a:.12+random()*.65,
+      phase:random()*Math.PI*2,
+      speed:.3+random()*1.5
+    });
+  }
+}
+
+function resize() {
+  width = window.innerWidth;
+  height = window.innerHeight;
+
+  dpr = Math.min(window.devicePixelRatio || 1,2);
+
+  canvas.width = Math.round(width*dpr);
+  canvas.height = Math.round(height*dpr);
+
+  canvas.style.width = width+"px";
+  canvas.style.height = height+"px";
+
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+
+  createBackgroundStars();
+}
+
+function drawBackground() {
+  const gradient = ctx.createRadialGradient(
+    width*.55,height*.4,0,
+    width*.5,height*.5,Math.max(width,height)*.85
+  );
+
+  gradient.addColorStop(0,"#102344");
+  gradient.addColorStop(.45,"#08152d");
+  gradient.addColorStop(1,"#02050d");
+
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0,0,width,height);
+
+  // Very subtle Milky Way inspired haze.
+  ctx.save();
+  ctx.translate(width*.52,height*.5);
+  ctx.rotate(-.42);
+
+  const haze = ctx.createRadialGradient(
+    0,0,0,0,0,Math.max(width,height)*.65
+  );
+  haze.addColorStop(0,"rgba(112,137,189,.085)");
+  haze.addColorStop(.5,"rgba(65,90,147,.035)");
+  haze.addColorStop(1,"rgba(0,0,0,0)");
+
+  ctx.scale(1,.38);
+  ctx.fillStyle = haze;
+  ctx.beginPath();
+  ctx.arc(0,0,Math.max(width,height)*.65,0,Math.PI*2);
+  ctx.fill();
+  ctx.restore();
+}
+
+function drawBackgroundStars(t) {
+  for(const s of backgroundStars) {
+    const twinkle = reducedMotion
+      ? 1
+      : .82+.18*Math.sin(t*s.speed+s.phase);
+
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle = `rgba(220,231,255,${s.a*twinkle})`;
+    ctx.fill();
+  }
+}
+
+function drawLine(a,b,alpha=.25) {
+  const p1 = project(a);
+  const p2 = project(b);
+
+  if(Math.abs(p1.x-p2.x)>width*.85) return;
+
+  ctx.beginPath();
+  ctx.moveTo(p1.x,p1.y);
+  ctx.lineTo(p2.x,p2.y);
+  ctx.strokeStyle = `rgba(151,185,234,${alpha})`;
+  ctx.lineWidth = .8;
+  ctx.stroke();
+}
+
+function drawConstellations() {
+  if(!showLines) return;
+
+  for(const group of constellations) {
+    for(const edge of group.edges) {
+      const a = starMap.get(edge[0]);
+      const b = starMap.get(edge[1]);
+
+      if(a && b) {
+        drawLine(
+          a,b,
+          group.name==="مثلث الصيف" ? .13 : .3
+        );
+      }
+    }
+  }
+}
+
+function drawStar(star,t) {
+  const p = project(star);
+
+  if(p.x < -80 || p.x > width+80 ||
+     p.y < -80 || p.y > height+80) return;
+
+  const isFatami = star.id==="vega";
+
+  const radius = isFatami
+    ? 5.5
+    : Math.max(1.2,3.4-star.mag*.42);
+
+  const pulse = reducedMotion
+    ? 1
+    : 1+.12*Math.sin(t*1.7);
+
+  if(isFatami) {
+    const halo = ctx.createRadialGradient(
+      p.x,p.y,0,
+      p.x,p.y,45*pulse
+    );
+
+    halo.addColorStop(0,"rgba(255,242,196,.55)");
+    halo.addColorStop(.18,"rgba(241,203,132,.24)");
+    halo.addColorStop(1,"rgba(232,199,140,0)");
+
+    ctx.fillStyle = halo;
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,45*pulse,0,Math.PI*2);
+    ctx.fill();
+  }
+
+  ctx.save();
+  ctx.shadowBlur = isFatami ? 24 : 9;
+  ctx.shadowColor = isFatami
+    ? "#ffe3a0"
+    : "#a9caff";
+
+  ctx.fillStyle = isFatami
+    ? "#fff0be"
+    : "#e7efff";
+
+  ctx.beginPath();
+  ctx.arc(p.x,p.y,radius,0,Math.PI*2);
+  ctx.fill();
+  ctx.restore();
+
+  if(isFatami) {
+    ctx.strokeStyle = "rgba(255,225,164,.65)";
+    ctx.lineWidth = 1;
+
+    const spread = 13*pulse;
+
+    ctx.beginPath();
+    ctx.moveTo(p.x-spread,p.y);
+    ctx.lineTo(p.x+spread,p.y);
+    ctx.moveTo(p.x,p.y-spread);
+    ctx.lineTo(p.x,p.y+spread);
+    ctx.stroke();
+
+    ctx.fillStyle = "#ffe7af";
+    ctx.font = "bold 15px Tahoma, Arial";
+    ctx.textAlign = "center";
+    ctx.fillText("نجمة فطامي",p.x,p.y-29);
+  } else if(showNames && star.mag < 1.7) {
+    ctx.fillStyle = "rgba(218,229,250,.78)";
+    ctx.font = "11px Arial";
+    ctx.textAlign = "center";
+    ctx.fillText(star.name,p.x,p.y-12);
+  }
+}
+
+function drawShootingStars(dt) {
+  if(reducedMotion) return;
+
+  if(Math.random() < dt*.018 &&
+     shootingStars.length < 2) {
+    shootingStars.push({
+      x:Math.random()*width,
+      y:Math.random()*height*.45,
+      vx:-260-Math.random()*160,
+      vy:110+Math.random()*90,
+      life:1
+    });
+  }
+
+  for(let i=shootingStars.length-1;i>=0;i--) {
+    const s=shootingStars[i];
+
+    s.x+=s.vx*dt;
+    s.y+=s.vy*dt;
+    s.life-=dt*.8;
+
+    const tail=55;
+
+    const grad=ctx.createLinearGradient(
+      s.x,s.y,
+      s.x-s.vx/300*tail,
+      s.y-s.vy/300*tail
+    );
+
+    grad.addColorStop(0,`rgba(255,245,218,${Math.max(0,s.life)})`);
+    grad.addColorStop(1,"rgba(255,255,255,0)");
+
+    ctx.strokeStyle=grad;
+    ctx.lineWidth=1.4;
+    ctx.beginPath();
+    ctx.moveTo(s.x,s.y);
+    ctx.lineTo(
+      s.x-s.vx/300*tail,
+      s.y-s.vy/300*tail
+    );
+    ctx.stroke();
+
+    if(s.life<=0) shootingStars.splice(i,1);
+  }
+}
+
+function animate(timestamp) {
+  const dt = Math.min(
+    (timestamp-lastTime)/1000 || .016,
+    .05
+  );
+
+  lastTime=timestamp;
+  animationTime+=dt;
+
+  ctx.clearRect(0,0,width,height);
+
+  drawBackground();
+  drawBackgroundStars(animationTime);
+  drawConstellations();
+
+  for(const star of stars) {
+    drawStar(star,animationTime);
+  }
+
+  drawShootingStars(dt);
+
+  requestAnimationFrame(animate);
+}
+
+/*
+  Touch and pointer interaction.
+  The canvas is behind the page.
+  Horizontal drag pans the sky.
+  Vertical page scrolling remains enabled.
+*/
+
+let dragging=false;
+let dragStartX=0;
+let dragStartY=0;
+let startRA=0;
+let startDec=0;
+let moved=false;
+
+canvas.addEventListener("pointerdown",e=>{
+  dragging=true;
+  moved=false;
+
+  dragStartX=e.clientX;
+  dragStartY=e.clientY;
+
+  startRA=viewRA;
+  startDec=viewDec;
+
+  if(canvas.setPointerCapture) {
+    canvas.setPointerCapture(e.pointerId);
+  }
+});
+
+canvas.addEventListener("pointermove",e=>{
+  pointerX=e.clientX;
+  pointerY=e.clientY;
+
+  if(!dragging) return;
+
+  const dx=e.clientX-dragStartX;
+  const dy=e.clientY-dragStartY;
+
+  if(Math.abs(dx)>5 || Math.abs(dy)>5) {
+    moved=true;
+  }
+
+  viewRA=wrapRA(startRA+dx/(width/12*zoom));
+
+  viewDec=Math.max(
+    -75,
+    Math.min(75,startDec-dy/(height/110*zoom))
+  );
+});
+
+function stopDragging() {
+  dragging=false;
+}
+
+canvas.addEventListener("pointerup",e=>{
+  if(!moved) {
+    const p=project(starMap.get("vega"));
+    const distance=Math.hypot(
+      e.clientX-p.x,
+      e.clientY-p.y
+    );
+
+    if(distance<45) openModal();
+  }
+
+  stopDragging();
+});
+
+canvas.addEventListener("pointercancel",stopDragging);
+
+canvas.addEventListener("wheel",e=>{
+  e.preventDefault();
+
+  zoom+=e.deltaY<0 ? .1 : -.1;
+  zoom=Math.max(.65,Math.min(2.5,zoom));
+},{passive:false});
+
+/*
+  Modal and navigation.
+*/
+
+const modal=document.getElementById("starModal");
+
+function openModal() {
+  modal.classList.add("open");
+  document.body.style.overflow="hidden";
+  document.getElementById("closeModal").focus();
+}
+
+function closeModal() {
+  modal.classList.remove("open");
+  document.body.style.overflow="";
+}
+
+document.getElementById("heroStar")
+  .addEventListener("click",openModal);
+
+document.getElementById("heroStar")
+  .addEventListener("keydown",e=>{
+    if(e.key==="Enter" || e.key===" ") {
+      e.preventDefault();
+      openModal();
+    }
+  });
+
+document.getElementById("discoverBtn")
+  .addEventListener("click",()=>{
+    document.getElementById("starSection")
+      .scrollIntoView({behavior:"smooth"});
+  });
+
+document.getElementById("closeModal")
+  .addEventListener("click",closeModal);
+
+document.getElementById("certificateBtn")
+  .addEventListener("click",()=>{
+    closeModal();
+
+    document.getElementById("certificateSection")
+      .scrollIntoView({behavior:"smooth"});
+  });
+
+modal.addEventListener("click",e=>{
+  if(e.target===modal) closeModal();
+});
+
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape") closeModal();
+});
+
+/*
+  Sky controls.
+*/
+
+document.getElementById("toggleLines")
+  .addEventListener("click",function(){
+    showLines=!showLines;
+    this.textContent=showLines
+      ? "الأبراج ✓"
+      : "الأبراج";
+    this.setAttribute("aria-pressed",String(showLines));
+  });
+
+document.getElementById("toggleNames")
+  .addEventListener("click",function(){
+    showNames=!showNames;
+    this.textContent=showNames
+      ? "الأسماء ✓"
+      : "الأسماء";
+    this.setAttribute("aria-pressed",String(showNames));
+  });
+
+/*
+  Sender name reveal.
+
+  The sender name is intentionally not
+  displayed anywhere in the visible
+  introduction, messages or certificate.
+
+  It appears only when the visitor reaches
+  the final sender section.
+*/
+
+const senderReveal=document.getElementById("senderReveal");
+const senderName=document.getElementById("senderName");
+
+if("IntersectionObserver" in window) {
+  const observer=new IntersectionObserver(entries=>{
+    for(const entry of entries) {
+      if(entry.isIntersecting) {
+        senderName.classList.add("visible");
+        observer.disconnect();
+      }
+    }
+  },{
+    threshold:.65
+  });
+
+  observer.observe(senderReveal);
+} else {
+  window.addEventListener("scroll",()=>{
+    const rect=senderReveal.getBoundingClientRect();
+
+    if(rect.top<window.innerHeight*.7) {
+      senderName.classList.add("visible");
+    }
+  });
+}
+
+/*
+  Initialize.
+*/
+
+window.addEventListener("resize",resize);
+
+resize();
+requestAnimationFrame(animate);
+
+</script>
+</body>
+</html>
